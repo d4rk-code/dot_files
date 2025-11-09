@@ -5,7 +5,7 @@
   "modules-left": ["hyprland/workspaces", "sway/mode"],
   "modules-center": ["clock"],
   "modules-right": [
-    "pulseaudio",
+    "wireplumber",
     "network",
     "cpu",
     "memory",
@@ -18,10 +18,10 @@
     "tooltip-format": "{:%Y-%m-%d %H:%M:%S}"
   },
 
-  "pulseaudio": {
+  "wireplumber": {
     "format": " {volume}%",
     "format-muted": " Muted",
-    "on-click": "pavucontrol"
+    "on-click": "pwvucontrol"
   },
 
   "network": {
