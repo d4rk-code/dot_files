@@ -1,0 +1,51 @@
+* {
+  font-family: "SpaceMono Nerd Font", monospace;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(40, 70, 50, 0.25); /* translucent green tint */
+  color: #e6f5e6;
+  border: none;
+}
+
+#workspaces button {
+  padding: 4px 10px;
+  margin: 2px 4px;
+  border-radius: 8px;
+  background: transparent;
+  color: #cdd6f4;
+  transition: all 0.2s ease;
+}
+
+#workspaces button.focused {
+  background: #89b4fa;
+  color: #1e1e2e;
+  font-weight: bold;
+}
+
+#workspaces button:hover {
+  background: #74c7ec;
+  color: #1e1e2e;
+}
+
+#clock,
+#cpu,
+#memory,
+#battery,
+#network,
+#pulseaudio,
+#tray {
+  padding: 4px 12px;
+  margin: 4px 6px;
+  border-radius: 8px;
+  background: rgba(49, 50, 68, 0.8);
+}
+
+#battery.critical {
+  background: #f38ba8;
+  color: #1e1e2e;
+  font-weight: bold;
+}
+
