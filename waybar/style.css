@@ -1,35 +1,40 @@
 * {
-  font-family: "SpaceMono Nerd Font", monospace;
+  font-family: "Hack Nerd Font", monospace;
   font-size: 14px;
   min-height: 0;
 }
 
+/* Bar background */
 window#waybar {
-  background: rgba(40, 70, 50, 0.25); /* translucent green tint */
+  background: rgba(40, 70, 50, 0.25);
   color: #e6f5e6;
   border: none;
 }
 
+/* Workspace buttons */
 #workspaces button {
   padding: 4px 10px;
   margin: 2px 4px;
-  border-radius: 8px;
-  background: transparent;
-  color: #cdd6f4;
+  border-radius: 4px;
+  background: #1e1e1e;
+  color: #ffffff;
   transition: all 0.2s ease;
 }
 
+/* Focused workspace with circle next to number */
 #workspaces button.focused {
-  background: #89b4fa;
-  color: #1e1e2e;
+  background: #2e2e2e;
+  color: #ffffff;
   font-weight: bold;
 }
 
+/* Hover effect */
 #workspaces button:hover {
-  background: #74c7ec;
-  color: #1e1e2e;
+  background: #3a3a3a;
+  color: #ffffff;
 }
 
+/* Modules (clock, etc.) */
 #clock,
 #cpu,
 #memory,
@@ -39,10 +44,11 @@ window#waybar {
 #tray {
   padding: 4px 12px;
   margin: 4px 6px;
-  border-radius: 8px;
-  background: rgba(49, 50, 68, 0.8);
+  border-radius: 4px;
+  background: rgba(30, 30, 30, 0.8);
 }
 
+/* Critical battery */
 #battery.critical {
   background: #f38ba8;
   color: #1e1e2e;

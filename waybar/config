@@ -2,7 +2,8 @@
   "layer": "top",
   "position": "bottom",
   "height": 32,
-  "modules-left": ["hyprland/workspaces", "sway/mode"],
+
+  "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [
     "wireplumber",
@@ -12,6 +13,20 @@
     "battery",
     "tray"
   ],
+
+  "hyprland/workspaces": {
+	  "format": "{name} {icon}",
+	  "format-icons": {
+		  "focused": "●",
+		  "default": "",
+		  "active": "●",
+		  // Ensure you don't have conflicting number definitions that take priority
+		  // "1": "some_icon", 
+		  // "2": "another_icon"
+	  },
+	  "on-click": "activate",
+	  "persistent_workspaces": false
+  },
 
   "clock": {
     "format": "{:%a %d %b  %H:%M}",
