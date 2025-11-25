@@ -11,8 +11,14 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-  --use "rose-pine/neovim"
-  use { "ellisonleao/gruvbox.nvim" }
+
+  -- favourite colorschemes
+  use {"ntk148v/komau.vim"} -- Packer
+  
+  --use "n1ghtmare/noirblaze-vim"
+
+
+
   use{
 	  "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"
   }
