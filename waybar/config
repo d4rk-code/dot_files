@@ -1,69 +1,139 @@
 {
-  "layer": "top",
-  "position": "bottom",
-  "height": 32,
+  "position": "left",
+  "width": 68,
+  "margin": "6, 6",
 
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
+  "modules-left": [
+	  "network",
+  "pulseaudio",
+  "cpu",
+  "tray"
+  ],
+
+  "modules-center": [
+    "custom/browser",
+    "custom/terminal",
+    "hyprland/workspaces",
+    "custom/files",
+    "custom/launcher"
+  ],
+
   "modules-right": [
-    "wireplumber",
-    "network",
-    "cpu",
     "memory",
     "battery",
-    "tray"
+    "custom/lock",
+    "custom/reboot",
+    "clock"
   ],
 
   "hyprland/workspaces": {
-	  "format": "{name} {icon}",
-	  "format-icons": {
-		  "focused": "●",
-		  "default": "",
-		  "active": "●",
-		  // Ensure you don't have conflicting number definitions that take priority
-		  // "1": "some_icon", 
-		  // "2": "another_icon"
-	  },
-	  "on-click": "activate",
-	  "persistent_workspaces": false
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "α",
+      "2": "β",
+      "3": "γ",
+      "4": "δ",
+      "5": "ε",
+      "6": "ζ",
+      "7": "η",
+      "8": "θ",
+      "focused": "●",
+      "active": "●"
+      
+    }
   },
 
   "clock": {
-    "format": "{:%a %d %b  %H:%M}",
-    "tooltip-format": "{:%Y-%m-%d %H:%M:%S}"
+    "format": "{:%H}\n──\n{:%M}",
+    "tooltip-format": "<big>{:%B %Y}</big>\n{calendar}",
+    "calendar": {
+      "mode": "month"
+    }
   },
-
-  "wireplumber": {
-    "format": " {volume}%",
-    "format-muted": " Muted",
-    "on-click": "pwvucontrol"
-  },
-
   "network": {
-    "format-wifi": "  {essid} ({signalStrength}%)",
-    "format-ethernet": "󰈁  {ifname}",
-    "format-disconnected": "󰖪 Disconnected"
+	  "format-wifi": "󰤨",
+	  "format-ethernet": "󰈁",
+	  "format-disconnected": "󰖪",
+
+	  "tooltip-format-wifi": "<b>{essid}</b>\nSignal: {signalStrength}%",
+	  "tooltip-format-ethernet": "Wired: {ifname}",
+	  "tooltip-format-disconnected": "Disconnected",
+
+	  "on-click": "alacritty nmtui",
+	  "tooltip": true
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "tooltip-format": "Volume: {volume}%\n{desc}",
+    "on-click": "pavucontrol"
   },
 
   "cpu": {
-    "format": " {usage}%",
-    "tooltip": true
+    "format": "",
+    "tooltip-format": "CPU: {usage}%"
   },
 
   "memory": {
-    "format": " {used:0.1f}G/{total:0.1f}G",
-    "tooltip": true
+    "format": "",
+    "tooltip-format": "RAM: {percentage}%"
   },
 
   "battery": {
-    "format": "{icon} {capacity}%",
-    "format-icons": ["󰂎", "󰁾", "󰁿", "󰂀", "󰁹"],
-    "format-full": "󰁹 {capacity}%",
-    "tooltip": true
+    "format": "{icon}",
+    "format-icons": ["", "", "", "", ""],
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "tooltip-format": "{capacity}%"
   },
 
   "tray": {
-    "spacing": 8
+    "icon-size": 18,
+    "spacing": 6
+  },
+
+  "custom/browser": {
+    "format": "",
+    "on-click": "firefox",
+    "tooltip": false
+  },
+
+  "custom/terminal": {
+    "format": "",
+    "on-click": "alacritty",
+    "tooltip": false
+  },
+
+  "custom/files": {
+    "format": "",
+    "on-click": "dolphin",
+    "tooltip": false
+  },
+
+  "custom/launcher": {
+	  "format": "󰣇",
+	  "on-click": "wofi --show run",
+	  "tooltip": false
+  },
+
+
+  "custom/lock": {
+    "format": "⏻",
+    "on-click": "hyprlock",
+    "tooltip": false
+  },
+
+  "custom/reboot": {
+    "format": "⟳",
+    "on-click": "reboot",
+    "tooltip": false
   }
 }
 

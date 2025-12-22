@@ -1,57 +1,96 @@
 * {
-  font-family: "Hack Nerd Font", monospace;
-  font-size: 14px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
+  color: #e6e6e6;
   min-height: 0;
 }
 
-/* Bar background */
+/* BAR */
 window#waybar {
-  background: rgba(40, 70, 50, 0.25);
-  color: #e6f5e6;
-  border: none;
+  background: rgba(12, 12, 14, 0.96);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Workspace buttons */
-#workspaces button {
-  padding: 4px 10px;
-  margin: 2px 4px;
-  border-radius: 4px;
-  background: #1e1e1e;
-  color: #ffffff;
-  transition: all 0.2s ease;
-}
-
-/* Focused workspace with circle next to number */
-#workspaces button.focused {
-  background: #2e2e2e;
-  color: #ffffff;
-  font-weight: bold;
-}
-
-/* Hover effect */
-#workspaces button:hover {
-  background: #3a3a3a;
-  color: #ffffff;
-}
-
-/* Modules (clock, etc.) */
-#clock,
+/* GENERAL MODULE SPACING */
+#network,
+#pulseaudio,
 #cpu,
 #memory,
 #battery,
-#network,
-#wireplumber,
-#tray {
-  padding: 4px 12px;
-  margin: 4px 6px;
-  border-radius: 4px;
-  background: rgba(30, 30, 30, 0.8);
+#clock,
+#tray,
+#custom-browser,
+#custom-terminal,
+#custom-files,
+#custom-launcher,
+#custom-lock,
+#custom-reboot {
+  margin: 6px 0;
+  padding: 6px 0;
+  font-size: 18px;
 }
 
-/* Critical battery */
-#battery.critical {
-  background: #f38ba8;
-  color: #1e1e2e;
-  font-weight: bold;
+/* WORKSPACES */
+#workspaces {
+  margin: 30px 0;
 }
+
+#workspaces button {
+  background: transparent;
+  font-size: 20px;
+  color: #777;
+}
+
+#workspaces button.focused {
+  color: #ff4d6d;
+  text-shadow: 0 0 8px rgba(255, 77, 109, 0.9);
+}
+
+/* CLOCK */
+#clock {
+  margin-top: 14px;
+  font-size: 20px;
+  color: #7df9ff;
+  text-shadow: 0 0 10px rgba(125, 249, 255, 0.8);
+}
+
+/* HOVER ACCENT */
+#custom-browser:hover,
+#custom-terminal:hover,
+#custom-files:hover,
+#custom-launcher:hover {
+  color: #9dceff;
+}
+
+/* BATTERY STATES */
+#battery.warning {
+  color: #ffb86c;
+}
+
+#battery.critical {
+  color: #ff2e63;
+  text-shadow: 0 0 10px rgba(255, 46, 99, 0.9);
+}
+
+/* POWER */
+#custom-lock {
+  color: #ff4d6d;
+}
+
+#custom-lock:hover {
+  color: #ff85a1;
+}
+
+#network {
+  font-size: 17px;
+  padding-top: 8px;
+  padding-bottom: 4px;
+}
+
+#network.disconnected {
+  color: #666;
+}
+
+
 
